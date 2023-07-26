@@ -9,7 +9,6 @@ from matplotlib.backends.backend_tkagg import (
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 from PIL import ImageTk, Image
-import glob
 from tkinter import font
 from importlib import resources
 import io
@@ -34,7 +33,11 @@ def gui():
         
         if(len(file_path)>0):#check if file_path was relly choosed
             folder_variable.config(text=file_path, bg='green')#choosen file path is printed to gui 
-            files=glob.glob(f'{file_path}\*.ats')#ats files inside the folder
+            #ats files inside the folder
+            files=[]
+            for file in os.listdir(file_path):
+                if file.endswith('.ats'):
+                    files.append(file)
             mes_freqs=[]#data collecting freqs
             for i in range(0, len(files)):#data collecting freqs are saved to list
                 hz=int(files[i].split('_')[-1].split('.')[0].split('H')[0])#getting mes_freq from filename

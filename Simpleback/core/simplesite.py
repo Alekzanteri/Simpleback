@@ -1,8 +1,8 @@
 #simplesite.py
-import glob
 import razorback as rb
 from Simpleback.core.calibration import *
 import numpy as np
+import os
 
 class simplesite:
     
@@ -20,10 +20,16 @@ class simplesite:
         self.sampling=sanpling rate of the data.
         """
         if(freq_rule==None):
-            files=glob.glob(f'{ts_folder}\*.ats') #list of data files in given folder
+            files=[]
+            for file in os.listdir(ts_folder):
+                if file.endswith('.ats'):
+                    files.append(os.path.join(ts_folder, file))
         else:
-            files=glob.glob(f'{ts_folder}\*{freq_rule}H.ats')
-        pattern = "**\*_T{channel}_*.ats"
+            files=[]
+            for file in os.listdir(ts_folder):
+                if file.endswith(f'{freq_rule}H.ats'):
+                    files.append(os.path.join(ts_folder, file))
+        pattern = "**_T{channel}_*.ats"
         tag_template = "fieldsite_{channel}"
         inv = rb.Inventory()#creating empty inventory
         print(rb.utils.tags_from_path(files, pattern, tag_template))#filling the inventory
