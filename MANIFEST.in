@@ -1,0 +1,2 @@
+include Simpleback/core/metronix_calibration/*.TXT
+include Simpleback/gui/*.png
