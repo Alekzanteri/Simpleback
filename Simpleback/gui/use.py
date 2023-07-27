@@ -240,7 +240,7 @@ def gui():
             print_window.config(text='Select folder and measuring frequency first!', bg='red')
         return()
     
-    prosses=Button(buttons_r1, text='Prosses', bg='#cf00ff', height=3, width=10, command=prosses)
+    prosses=Button(buttons_r1, text='Process', bg='#cf00ff', height=3, width=10, command=prosses)
     prosses.grid(row=0, column=2, padx=(0, 20))
     
     #clear button to remove tfs from canvas
