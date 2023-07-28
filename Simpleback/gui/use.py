@@ -234,7 +234,7 @@ def gui():
                 
             canvas.mpl_connect("key_press_event", on_key_press)
             
-            print_window.config(text='Processing done!', bg='#ec99ff')
+            print_window.config(text='Prosessing done!', bg='#ec99ff')
             
         else:
             print_window.config(text='Select folder and measuring frequency first!', bg='red')
@@ -247,7 +247,7 @@ def gui():
     def clear_canvas():
         del globals()['file_path']
         folder_variable.config(text='No folder selected.', bg='red')
-        print_window.config(text='Select folder define settings and press process.', bg='#ec99ff')
+        print_window.config(text='Select folder define settings and press prosses.', bg='#ec99ff')
         
         #all widgeds in row_3 are deleted
         for widget in row_3.winfo_children():
@@ -292,7 +292,7 @@ def gui():
     row_5=tk.Frame(master=root,height=300)
     row_5.grid(row=4, column=0,)
     
-    print_window=tk.Label(master=row_5, text='Select folder define settings and press process.', bg='#ec99ff')
+    print_window=tk.Label(master=row_5, text='Select folder define settings and press prosses.', bg='#ec99ff')
     print_window.grid(row=0, column=0, )
 
 
