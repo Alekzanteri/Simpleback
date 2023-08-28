@@ -24,7 +24,7 @@ METRONIX_ALPHA_MAP = {'MFS06': 4.0, 'MFS07': 32.0}
 
 def metronix(filename, sampling_rate, chopper_on_limit=None, version_pattern=None, alpha_map=None):
     """ 
-   This part is copied from Razorback code with few minor chanfes. This is needed for calibration of metronix files.
+   This part is copied from Razorback code with few minor changes. This is needed for calibration of metronix files.
 
     """
 

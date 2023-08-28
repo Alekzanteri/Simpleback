@@ -1,0 +1,7 @@
+﻿variable,value
+cod,0
+nper,50
+overlap,0.1
+min_factor,5
+max_factor,1
+freqs,25

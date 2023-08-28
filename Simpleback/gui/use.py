@@ -12,11 +12,15 @@ from PIL import ImageTk, Image
 from tkinter import font
 from importlib import resources
 import io
+import pandas as pd
+from pathlib import Path
+import pathlib
+
 
 
 def gui():
     
-    root=tk.Tk(className='Simpleback prosessing')#crating main window.
+    root=tk.Tk(className='Simpleback0.0.1')#creating main window.
     root.configure(bg='#fbd9ff')#background color
     font_size=16
     root.columnconfigure(0, weight=1)
@@ -74,18 +78,23 @@ def gui():
     set_width=4 #width of setting entrys
     
     #setting default values
+    abs_path=pathlib.Path(__file__).parent.resolve()#path of this exact file.
+    rel_path=r'default_settings.csv'
+    default_csv_file_path = os.path.join(abs_path, rel_path)
+    
+    defaults=pd.read_csv(default_csv_file_path, index_col=0)
     global cod_def
-    cod_def=0.3
+    cod_def=defaults.value.cod
     global nper_def
-    nper_def=250
+    nper_def=defaults.value.nper
     global overlap_def
-    overlap_def=0.3
+    overlap_def=defaults.value.overlap
     global min_factor_def
-    min_factor_def=5
+    min_factor_def=defaults.value.min_factor
     global max_factor_def
-    max_factor_def=1
+    max_factor_def=defaults.value.max_factor
     global freqs_def
-    freqs_def=15
+    freqs_def=defaults.value.freqs.astype(int)
 
     #cod label and entry 
     cod_label=Label(settings, text='cod', bg='#ec99ff')
