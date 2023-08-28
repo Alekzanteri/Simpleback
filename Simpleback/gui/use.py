@@ -20,7 +20,7 @@ import pathlib
 
 def gui():
     
-    root=tk.Tk(className='Simpleback0.0.1')#creating main window.
+    root=tk.Tk(className='Simpleback0.1.0')#creating main window.
     root.configure(bg='#fbd9ff')#background color
     font_size=16
     root.columnconfigure(0, weight=1)

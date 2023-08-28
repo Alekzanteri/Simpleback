@@ -7,3 +7,5 @@ Write here bugs that need to be fixed. When fixed, remove the marking.
 - Z flip problem.
 
 - Lisence missing.
+
+- how to create exe file is missing one "-" on pyinstaller flag
