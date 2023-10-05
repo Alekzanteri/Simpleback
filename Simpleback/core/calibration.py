@@ -1,4 +1,5 @@
 #calibration.py
+#Note that this file is under Razorback license! Check https://github.com/BRGM/razorback for more info.
 
 from pathlib import Path
 import re
